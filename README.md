@@ -1,6 +1,6 @@
 # DuckDB Serverless deployment at GCP
 
-This repository contains code to deploy a [Cloud Run serverless endpoint](https://cloud.google.com/run) based on [duckDB](https://duckdb.org/) that is able to execute arbitrary SQL queries wit the following execution workflow:
+This repository contains code to deploy a [Cloud Run serverless endpoint](https://cloud.google.com/run) based on [duckDB](https://duckdb.org/) that is able to execute arbitrary SQL queries. The execution workflow is:
 - Data (tables) should be staged on [GCS](https://cloud.google.com/storage) in [PARQUET](https://parquet.apache.org/) format
 - If there is already a  [duckdb catalog file](https://duckdb.org/docs/connect) it should be staged as well at GCS, it will be read upon start and uploaded at the very end to save any potential changes (e.g. table creation)
 - As a new query arrives, we parse the referenced tables and create a global python dict loading the corresponding Parquet tables into [Arrow Datasets](https://arrow.apache.org/docs/python/dataset.html), which are then registered at duckDB. If the container is still alive, subsequenta calls can reuse the [global python dict to avoid scanning the tables over and over](https://cloud.google.com/run/docs/tips/general#using_global_variables).
