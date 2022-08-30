@@ -34,7 +34,7 @@ $> ./build_cloud_run.sh
     
 ## Example use
 
-From a terminal run:
+From a terminal run the following command changing CLOUD_RUN_ENDPOINT, BUCKET_NAME and DB_FILE_NAME
 
 ```bash
 #First call
