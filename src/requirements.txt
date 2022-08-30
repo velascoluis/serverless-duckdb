@@ -1,0 +1,8 @@
+sql-metadata
+argparse
+duckdb
+pyarrow
+Flask
+gunicorn
+google-cloud-storage
+pandas
