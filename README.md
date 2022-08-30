@@ -55,4 +55,5 @@ sys     0m0.011s
 #Extract from container log: 
 #2022-08-30T09:15:03.342777ZINFO:root:Table:customers already in memory
 ```
-
+## References and kudos 
+https://datamonkeysite.com/2022/08/27/running-a-serverless-duckdb-on-google-cloud/ 
