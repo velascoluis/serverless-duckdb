@@ -38,7 +38,7 @@ From a terminal run:
 
 ```bash
 #First call
-$> time curl -X GET 'https://<CLOUD_RUN_ENDPOINT>/?sql_query=select%20count(gender),%20gender%20from%20customers%20where%20PhoneService=%27Yes%27%20group%20by%20gender&bucket_name=velascoluis-dev-sandbox-warehouse&db_file=my_duckdb.db'
+$> time curl -X GET 'https://<CLOUD_RUN_ENDPOINT>/?sql_query=select%20count(gender),%20gender%20from%20customers%20where%20PhoneService=%27Yes%27%20group%20by%20gender&bucket_name=<BUCKET_NAME>&db_file=<DB_FILE_NAME>'
 [{"count(gender)":2163,"gender":"Female"},{"count(gender)":2300,"gender":"Male"}]
 real    0m3.613s
 user    0m0.017s
@@ -47,7 +47,7 @@ sys     0m0.014s
 #2022-08-30T09:15:00.296854ZINFO:root:Loading table:customers
 
 #Second call
-$> time curl -X GET 'https://<CLOUD_RUN_ENDPOINT>p/?sql_query=select%20count(gender),%20gender%20from%20customers%20where%20PhoneService=%27Yes%27%20group%20by%20gender&bucket_name=velascoluis-dev-sandbox-warehouse&db_file=my_duckdb.db'
+$> time curl -X GET 'https://<CLOUD_RUN_ENDPOINT>/?sql_query=select%20count(gender),%20gender%20from%20customers%20where%20PhoneService=%27Yes%27%20group%20by%20gender&bucket_name=<BUCKET_NAME>&db_file=<DB_FILE_NAME>'
 [{"count(gender)":2300,"gender":"Male"},{"count(gender)":2163,"gender":"Female"}]
 real    0m0.967s
 user    0m0.015s
